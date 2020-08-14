@@ -3,6 +3,9 @@
     padding: 0;
     /* обнулить стили */
 }
+body{
+    font-family: 'Fanwood Text', serif;
+}
 
 header {
     height: 50px;
@@ -18,34 +21,12 @@ header {
     margin: 25px auto;
 }
 
-button {
-    border-radius: 8px;
-    margin-bottom: 30px;
-    padding: 5px 4px 5px 4px;
-    box-shadow: 4px 4px 8px 1px #969696;
+button {    
     outline: none;
     cursor: pointer;
 }
 
-button:hover {
-    animation: scale-in-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-}
-
-@keyframes scale-in-center {
-    0% {
-        -webkit-transform: scale(1);
-        transform: scale(1);
-        opacity: 1;
-    }
-
-    100% {
-        -webkit-transform: scale(1.1);
-        transform: scale(1.1);
-        opacity: 1;
-    }
-}
-
-.btn-cart {
+.btn-cart {    
     margin-top: 5px;
     margin-left: 40px;
     display: inline-block;
@@ -163,13 +144,17 @@ button:hover {
     height: 200px;
     width: 200px;
 }
+h3, p{
+    font-size: 25px;
+}
 
-.by-btn {
+.by-btn {    
     font-weight: 700;
     color: white;
     text-decoration: none;
     padding: .8em 1em calc(.8em + 3px);
-    border-radius: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     background: rgb(64, 199, 129);
     box-shadow: 0 -3px rgb(53, 167, 110) inset;
     transition: 0.2s;

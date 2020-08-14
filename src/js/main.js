@@ -43,8 +43,6 @@ const products = [{
 
 // Сокращенная версия и без запятой
 
-
-
 function renderProductMy(title, price, img = '../src/assets/imgs/error.png') { //если изображение отстутствует
   return `<div class="product-item">
               <img class="product-img" src = ${img}>
