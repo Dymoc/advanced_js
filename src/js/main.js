@@ -39,4 +39,4 @@ cartButton.addEventListener('click', () => {
     document.querySelector('.som__products').innerHTML += renderProductMy(item.title, item.price, item.img);
   });
 })
-// renderProducts(products);
+
