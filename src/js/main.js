@@ -22,25 +22,6 @@ const products = [{
 ];
 
 
-// const renderProduct = (title, price, img = '../src/assets/imgs/error.png') => {
-//   return `<div class="product-item">
-//             <img class="product-img" src = ${img}>
-//             <h3>${title}</h3>
-//             <p>${price}</p>
-//             <button class="by-btn">Добавить в корзину</button>
-//           </div>`;
-// };
-
-
-// const renderProducts = (list) => {  
-//   const productList = list.map((product) => {
-//     return renderProduct(product.title, product.price, product.img);
-//   });
-//   document.querySelector('.products').innerHTML = productList;
-// }
-
-
-
 // Сокращенная версия и без запятой
 
 function renderProductMy(title, price, img = '../src/assets/imgs/error.png') { //если изображение отстутствует
