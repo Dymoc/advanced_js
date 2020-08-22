@@ -48,7 +48,7 @@ class Cart {
     get calcTotalPrice() {
         this.totalPrice = null;
         this.items.forEach(item => {
-            this.totalPrice += item.price;
+            this.totalPrice += item.price*item.quantity;
         });
 
     };
@@ -77,7 +77,7 @@ class Cart {
 }
 
 class ItemCart {
-    constructor(id, title, price, quantity) {
+    constructor(id, title, price, quantity = +prompt('Сколько товара?')) {
         // this.img = item.img;
         this.id = id;
         this.title = title;
