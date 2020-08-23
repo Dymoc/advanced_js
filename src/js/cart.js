@@ -29,11 +29,11 @@ const items = [{
 
 
 class Cart {
-
-    items = [];
-    totalPrice = null;
-    totalQuantity = null;
-
+    constructor() {
+        this.items = [];
+        this.totalPrice = null;
+        this.totalQuantity = null;
+    }
 
     _fillCart(items) {
         items.forEach(item => {
@@ -48,7 +48,7 @@ class Cart {
     get calcTotalPrice() {
         this.totalPrice = null;
         this.items.forEach(item => {
-            this.totalPrice += item.price*item.quantity;
+            this.totalPrice += item.price * item.quantity;
         });
 
     };
@@ -65,6 +65,16 @@ class Cart {
         myCart.calcTotalQuantity;
         console.log(`${myCart.totalPrice} за ${myCart.totalQuantity} товара`);
     }
+}
+
+class ItemCart {
+    constructor(id, title, price, quantity = +prompt('Сколько товара?')) {
+        // this.img = item.img;
+        this.id = id;
+        this.title = title;
+        this.price = price;
+        this.quantity = quantity;
+    }
 
     // _render() {
     //     return `<div class="product-item">
@@ -76,16 +86,6 @@ class Cart {
     // }
 }
 
-class ItemCart {
-    constructor(id, title, price, quantity = +prompt('Сколько товара?')) {
-        // this.img = item.img;
-        this.id = id;
-        this.title = title;
-        this.price = price;
-        this.quantity = quantity;
-    }
-}
-
 const myCart = new Cart();
 myCart._fillCart(items);
 myCart.showCart();
@@ -93,4 +93,3 @@ myCart.showCart();
 
 myCart._addItem(new ItemCart(5, 'desk', 1500, 3));
 myCart.showCart();
-
