@@ -1,6 +1,7 @@
 .stuffing {
     display: none;
     margin-right: 20px;
+    user-select: none;
 }
 
 .topping{
