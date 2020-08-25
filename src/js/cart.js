@@ -31,8 +31,6 @@ const items = [{
 class Cart {
     constructor() {
         this.items = [];
-        this.totalPrice = null;
-        this.totalQuantity = null;
     }
 
     _fillCart(items) {
@@ -45,24 +43,23 @@ class Cart {
         this.items.push(item);
     }
 
-    get calcTotalPrice() {
-        this.totalPrice = null;
+    get totalPrice() {
+        let totalPrice = null;
         this.items.forEach(item => {
-            this.totalPrice += item.price * item.quantity;
-        });
-
+            totalPrice += item.price * item.quantity;
+        }); 
+        return totalPrice;
     };
 
-    get calcTotalQuantity() {
-        this.totalQuantity = null;
+    get totalQuantity() {        
+        let totalQuantity = null;
         this.items.forEach(item => {
-            this.totalQuantity += item.quantity;
-        });
+            totalQuantity += item.quantity;
+        }); 
+        return totalQuantity;
     };
 
     showCart() {
-        myCart.calcTotalPrice;
-        myCart.calcTotalQuantity;
         console.log(`${myCart.totalPrice} за ${myCart.totalQuantity} товара`);
     }
 }
@@ -76,14 +73,14 @@ class ItemCart {
         this.quantity = quantity;
     }
 
-    // _render() {
-    //     return `<div class="product-item">
-    //           <img class="product-img" src = ${img}>
-    //           <h3>${title}</h3>
-    //           <p>${price}</p>
-    //           <button class="by-btn">Добавить в корзину</button>
-    //         </div>`;
-    // }
+    _render() {
+        return `<div class="product-item">
+              <img class="product-img" src = ${img}>
+              <h3>${title}</h3>
+              <p>${price}</p>
+              <button class="by-btn">Добавить в корзину</button>
+            </div>`;
+    }
 }
 
 const myCart = new Cart();
