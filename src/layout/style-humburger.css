@@ -1,0 +1,10 @@
+.stuffing {
+    display: none;
+    margin-right: 20px;
+    user-select: none;
+}
+
+.topping{
+    display: none;
+    margin-top: 25PX;
+}
