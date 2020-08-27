@@ -33,9 +33,10 @@ function renderProductMy(title, price, img = '../src/assets/imgs/error.png') { /
             </div>`;
 }
 
-const cartButton = document.querySelector('.btn-cart')
+const cartButton = document.querySelector('.btn-cart');
+
 cartButton.addEventListener('click', () => {
-  products.map(item => {
+  products.forEach(item => {
     document.querySelector('.som__products').innerHTML += renderProductMy(item.title, item.price, item.img);
   });
 })

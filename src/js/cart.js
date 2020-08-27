@@ -34,9 +34,12 @@ class Cart {
     }
 
     _fillCart(items) {
-        items.forEach(item => {
-            this.items.push(new ItemCart(item.id, item.title, item.price, item.quantity));
-        });
+        content
+            .then(                
+                items.forEach(item => {
+                    this.items.push(new ItemCart(item.id, item.title, item.price, item.quantity));
+                })
+            )
     };
 
     _addItem(item) {
@@ -47,15 +50,15 @@ class Cart {
         let totalPrice = null;
         this.items.forEach(item => {
             totalPrice += item.price * item.quantity;
-        }); 
+        });
         return totalPrice;
     };
 
-    get totalQuantity() {        
+    get totalQuantity() {
         let totalQuantity = null;
         this.items.forEach(item => {
             totalQuantity += item.quantity;
-        }); 
+        });
         return totalQuantity;
     };
 
@@ -84,9 +87,23 @@ class ItemCart {
 }
 
 const myCart = new Cart();
-myCart._fillCart(items);
+
+let content = (items) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (items) {
+                resolve();
+            } else {
+                reject();
+            }
+        }, 1000);
+
+    });
+}
+
+myCart._fillCart(content(items));
 myCart.showCart();
 
 
-myCart._addItem(new ItemCart(5, 'desk', 1500, 3));
-myCart.showCart();
+// myCart._addItem(new ItemCart(5, 'desk', 1500, 3));
+// myCart.showCart();
