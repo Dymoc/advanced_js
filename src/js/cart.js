@@ -1,5 +1,27 @@
 "use strict";
 
+let fillCart = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        const items = [{
+                id: 1,
+                title: 'Notebook',
+                price: 20000,
+                img: '../src/assets/imgs/notebook.jpg',
+                quantity: 1,
+            },
+            {
+                id: 2,
+                title: 'Mouse',
+                price: 1500,
+                quantity: 1,
+            },
+        ];
+        console.log(items);
+        resolve(items);
+    }, 4000);
+
+});
+
 function renderProductMy(title, price, img = '../src/assets/imgs/error.png') { //если изображение отстутствует
     return `<div class="product-item">
                 <img class="product-img" src = ${img}>
@@ -8,7 +30,6 @@ function renderProductMy(title, price, img = '../src/assets/imgs/error.png') { /
                 <button class="by-btn">Добавить в корзину</button>
               </div>`;
 }
-
 
 class Cart {
     constructor() {
@@ -20,12 +41,6 @@ class Cart {
             this.items.push(new ItemCart(item.id, item.title, item.price, item.quantity));
         });
     };
-
-    _render(items) {
-        items.forEach(item => {
-            document.querySelector('.som__products').innerHTML += renderProductMy(item.title, item.price, item.img);
-        });
-    }
 
     _addItem(item) {
         this.items.push(item);
@@ -47,6 +62,12 @@ class Cart {
         return totalQuantity;
     };
 
+    _render(items) {
+        items.forEach(item => {
+            document.querySelector('.som__products').innerHTML += renderProductMy(item.title, item.price, item.img);
+        });
+    }
+
     showCart() {
         console.log(`${myCart.totalPrice} за ${myCart.totalQuantity} товара`);
     }
@@ -61,51 +82,17 @@ class ItemCart {
         this.quantity = quantity;
     }
 
-    render(item) {
+    _render() {
         return `<div class="product-item">
-              <img class="product-img" src = ${item.img}>
-              <h3>${item.title}</h3>
-              <p>${item.price}</p>
+              <img class="product-img" src = ${img}>
+              <h3>${title}</h3>
+              <p>${price}</p>
               <button class="by-btn">Добавить в корзину</button>
             </div>`;
     }
 }
 
 const myCart = new Cart();
-
-let fillCart = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        const items = [{
-                id: 1,
-                title: 'Notebook',
-                price: 20000,
-                img: '../src/assets/imgs/notebook.jpg',
-                quantity: 1,
-            },
-            {
-                id: 2,
-                title: 'Mouse',
-                price: 1500,
-                quantity: 1,
-            },
-            {
-                id: 3,
-                title: 'Keyboard',
-                price: 5000,
-                quantity: 1,
-            },
-            {
-                id: 4,
-                title: 'Gamepad',
-                price: 4500,
-                quantity: 1,
-            },
-        ];
-        console.log(items);
-        resolve(items);
-    }, 4000);
-
-});
 
 fillCart
     .then(
@@ -115,10 +102,14 @@ fillCart
             myCart.showCart();
         }
     )
-   
 
+// let content = new Promise((resorve, reject) => {
+//     myCart._fillCart(items);
+// })
 
+// myCart._fillCart(content(items));
 
+myCart.showCart();
 
 
 // myCart._addItem(new ItemCart(5, 'desk', 1500, 3));

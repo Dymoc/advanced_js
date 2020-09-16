@@ -72,6 +72,11 @@ button {
     justify-content: space-between;
 }
 
+.products{
+    display: flex;
+    justify-content: space-between;
+}
+
 .product-item {
     border: 2px solid darkcyan;
     text-align: center;
@@ -103,7 +108,7 @@ h3, p{
     font-size: 25px;
 }
 
-.by-btn {    
+.buy-btn {    
     font-weight: 700;
     color: white;
     text-decoration: none;
@@ -115,11 +120,11 @@ h3, p{
     transition: 0.2s;
 }
 
-.by-btn:hover {
+.buy-btn:hover {
     background: rgb(53, 167, 110);
 }
 
-.by-btn:active {
+.buy-btn:active {
     background: rgb(33, 147, 90);
     box-shadow: 0 3px rgb(33, 147, 90) inset;
 }
