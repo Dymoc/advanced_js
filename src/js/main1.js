@@ -132,7 +132,7 @@ class ProductsList extends List{
 class ProductItem extends Item{
   render() {
     return `<div class="product-item" data-id="${this.id_product}">
-                <img src="${this.img}" alt="Some img">
+                <img class="product-img" src="${this.img}" alt="Some img">
                 <div class="desc">
                     <h3>${this.product_name}</h3>
                     <p>${this.price} ₽</p>
@@ -225,6 +225,7 @@ class Cart extends List{
     });
     document.querySelector(this.container).addEventListener('click', e => {
       if(e.target.classList.contains('.del-btn')){
+        console.log('yes');
         this.removeProduct(e.target);
       }
     })
