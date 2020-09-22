@@ -68,7 +68,7 @@ class List {
       const productObj = new this.list[this.constructor.name](product);
       console.log(productObj);
       this.allProducts.push(productObj);
-      block.inser  tAdjacentHTML('beforeend', productObj.render());
+      block.insertAdjacentHTML('beforeend', productObj.render());
     }
   }
 
