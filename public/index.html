@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Интернет-магазин</title>
     <link href="https://fonts.googleapis.com/css2?family=Fanwood+Text:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../src/layout/style.css">
 </head>
+
 <body>
     <div class="content">
-<header>
-    <button class="btn-cart" type="button">Корзина</button>
+        <header>
+            <div class="cart">
+                <form action="#" class="search-form">
+                    <input type="text" class="search-field">
+                    <button class="btn-search" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>               
+                <button class="btn-cart" type="button">Корзина</button>
+                <div class="cart-block invisible"></div>
+            </div>
+            <div>
+                
+            </div>
+            
+            <!-- <button class="btn-cart" type="button">Корзина</button>
     <input class="search-form" type="text">
-    <div class="cart-block invisible"></div>
-</header>
-<main class="catalog">
-    <div class="products"></div>    
-    <div class="som__products"></div>
-</main>
-</div>
-<footer>&copy; 2020 HomeWork for GeekBrains</footer>
-<script src="../src/js/main1.js"></script>
-<!-- <script src="../src/js/cart.js"></script> -->
+    <div class="cart-block invisible"></div> -->
+        </header>
+        <main class="catalog">
+            <div class="products"></div>
+            <div class="som__products"></div>
+        </main>
+    </div>
+    <footer>&copy; 2020 HomeWork for GeekBrains</footer>
+    <script src="../src/js/main1.js"></script>
+    <!-- <script src="../src/js/cart.js"></script> -->
 </body>
+
 </html>

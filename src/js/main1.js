@@ -223,11 +223,11 @@ class Cart extends List{
     document.querySelector('.btn-cart').addEventListener('click', () => {
       document.querySelector(this.container).classList.toggle('invisible');
     });
-    // document.querySelector(this.container).addEventListener('click', e => {
-    //   if(e.target.classList.contains('.del-btn')){
-    //     this.removeProduct(e.target);
-    //   }
-    // })
+    document.querySelector(this.container).addEventListener('click', e => {
+      if(e.target.classList.contains('.del-btn')){
+        this.removeProduct(e.target);
+      }
+    })
   }
 
 }
