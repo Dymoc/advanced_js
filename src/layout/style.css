@@ -11,7 +11,29 @@ header {
     height: 50px;
     background-color: rgb(81,92,102);
 }
-
+.search-form{
+    margin-top: 5px;
+    position: relative;
+    margin-right: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.search-field:focus{
+    outline: none;
+}
+.search-field {
+    box-sizing: border-box;
+    width: 200px;
+    color: #fafafa;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #fafafa;
+}
+.search-button{
+    width: 19px;
+    height: 17px;
+}
 .content {
     min-height: calc(100vh - 50px);
 }
@@ -42,7 +64,7 @@ button {
     background-color: white;
     padding: 20px;
     color: black;
-    width: 300px;
+    width: 320px;
 }
 
 .invisible{
@@ -76,17 +98,17 @@ button {
 }
 .product-single-price{
     color: #474747;
-    font-size: 0.5em;
+    font-size: 1.45em;
 }
 .product-price{
-    margin-left: 30px;
+    margin-left: 8px;
 }
 .product-desc{
     max-width: 150px;
 }
 .product-quantity {
     margin-top: 15px;
-    font-size: 0.75em;
+    font-size: 1.55em;
 }
 .right-block{
     text-align: right;
@@ -123,16 +145,12 @@ button {
         0 0 1px rgb(86, 96, 106);
 }
 
-/* .btn-cart:focus:not(:active) {
-    border: 1px solid rgb(22, 32, 43);
-    border-bottom: 1px solid rgb(25, 34, 45);
-    background: rgb(53, 61, 71);
-    box-shadow:
-        inset 0 1px 3px rgba(0, 10, 20, .5),
-        0 1px rgb(83, 94, 104),
-        0 0 1px rgb(86, 96, 106);
-    pointer-events: none;
-} */
+.del-btn{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
 
 .som__products {
     display: flex;
@@ -204,24 +222,3 @@ footer {
     padding-top: 20px;
 }
 
-.search-form{
-    position: relative;
-    margin-right: 50px;
-    display: inline-block;
-}
-.search-field:focus{
-    outline: none;
-}
-.search-field {
-    box-sizing: border-box;
-    width: 200px;
-    color: #fafafa;
-    padding: 10px;
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #fafafa;
-}
-.search-button{
-    width: 15px;
-    height: 15px;
-}
